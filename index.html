@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-colour="seafoam">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="fileloom-preview" content="sea-glass">
+  <meta name="color-scheme" content="light dark">
+  <title>Sea Glass — material & component studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='4' y='4' width='32' height='32' rx='13' fill='%2396c5b5'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="sea-glass.css">
+  <link rel="stylesheet" href="fileloom.css">
+  <script src="motion.js" defer></script>
+  <script src="studio.js" defer></script>
+  <script src="fileloom-model.js" defer></script>
+  <script src="fileloom.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to components</a>
+  <header class="topbar">
+    <a href="#" class="brand" aria-label="Sea Glass home"><span class="brand-mark glass" aria-hidden="true"></span><span>Sea glass<span class="brand-sub">Material & component studio</span></span></a>
+    <div class="top-actions"><span class="version">Study 01 / Web</span><button class="quiet icon-button" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false"></button><button class="quiet" id="tune-toggle" aria-label="Material" aria-expanded="false" aria-controls="material-panel"><span data-icon="sliders"></span><span>Material</span></button></div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div><p class="eyebrow">The collection</p><nav aria-label="Studio views" class="view-nav"><button class="nav-item" data-view="components" aria-current="page"><span data-icon="grid"></span>Components<span class="nav-count">32</span></button><button class="nav-item" data-view="context"><span data-icon="folder"></span>Fileloom preview</button><button class="nav-item" data-view="foundations"><span data-icon="layers"></span>Foundations</button></nav></div>
+      <div class="palette"><p class="eyebrow">Glass colour</p><div id="colours" role="group" aria-label="Glass colour"></div><p id="colour-name">Seafoam</p><p class="aside-note">A little colour.<br>A little light.<br>Something you can feel.</p></div>
+      <div class="sidebar-footer"><span class="status-dot"></span>Interactive prototype<p>For Fileloom · v0.1</p></div>
+    </aside>
+    <main id="workspace" tabindex="-1">
+      <section class="hero">
+        <div class="hero-copy"><p class="eyebrow">Worn by water. Shaped for touch.</p><h1>Quiet colour.<br><em>Tangible controls.</em></h1><p class="hero-description">A softer kind of glass. Frosted surfaces, light caught at the edges, and just enough depth to invite your hand.</p><div class="hero-link"><span class="tiny-line"></span>Explore the material. Try every control.</div></div>
+        <div class="material-scene" aria-label="Sea glass material samples"><div class="scene-shadow"></div><div class="pebble pebble-small glass tone-honey"></div><div class="pebble pebble-orchid glass tone-orchid"></div><div class="hero-object glass"><span class="object-glint"></span><span data-icon="spark"></span><span>Sea glass</span><span class="object-dot"></span></div><div class="pebble pebble-round glass tone-cornflower"></div><span class="scene-caption">Frost / pigment / light</span></div>
+      </section>
+      <section id="material-panel" class="material-panel" hidden aria-label="Material tuning">
+        <div><p class="eyebrow">Make it yours</p><h2>The material, under your control.</h2></div>
+        <label>Surface grain <output id="grain-value">32%</output><input id="grain" aria-label="Surface grain" type="range" min="0" max="65" value="32"></label>
+        <label>Elevation <output id="depth-value">70%</output><input id="depth" aria-label="Elevation" type="range" min="0" max="100" value="70"></label>
+        <label class="check-label"><input id="opaque" type="checkbox">Solid surfaces</label>
+        <label class="check-label"><input id="reduce-motion" type="checkbox">Reduce motion</label>
+        <button class="quiet" id="reset-material">Reset</button>
+      </section>
+      <section class="studio-view" id="view-components">
+        <div class="section-heading"><div><p class="eyebrow">01 / Component collection</p><h2>Made to be used.</h2></div><p>Real states. Real interactions.<br>Click, drag, tab, and try.</p></div>
+        <div class="component-grid" id="component-grid"></div>
+      </section>
+      <section class="studio-view" id="view-context" hidden>
+        <div class="section-heading"><div><p class="eyebrow">02 / Fileloom replacement</p><h2>Your files. A quieter place.</h2></div><p>A connected design preview.<br>Sample files, local interactions.</p></div>
+        <div class="fl-app" id="fl-app" aria-label="Fileloom design preview">
+ <header class="fl-mast"><div class="fl-wordmark"><span class="brand-mark glass" aria-hidden="true"></span><strong>Fileloom</strong><span class="fl-beta">Sea glass study</span></div><button class="quiet icon-button" data-fl="palette" aria-label="Open command palette" aria-keyshortcuts="Control+K Meta+K"><span data-icon="search"></span></button></header>
+ <div class="fl-frame"><nav class="fl-rail" aria-label="Fileloom destinations">
+  <p class="eyebrow">Your space</p><button data-fl="page" data-page="files" aria-current="page"><span data-icon="folder"></span>Files</button><button data-fl="page" data-page="library"><span data-icon="book"></span>Library</button><button data-fl="page" data-page="reader"><span data-icon="file"></span>Reader</button><button data-fl="page" data-page="settings"><span data-icon="sliders"></span>Settings</button>
+  <p class="eyebrow fl-location-label">Locations</p><button data-fl="location" data-folder="home"><span data-icon="home"></span>On this device</button><button data-fl="location" data-folder="drive"><span data-icon="cloud"></span>Google Drive</button><button data-fl="location" data-folder="nas"><span data-icon="server"></span>Studio NAS</button><div class="fl-space"><div class="progress-label"><span>Local collection</span><span>18.4 GB</span></div><div class="progress-track"><div class="progress-fill" style="width:32%"></div></div><small>Sample content · resets on reload</small></div>
+ </nav><div class="fl-body"><div id="fl-content"></div></div></div>
+ <nav class="fl-mobile-nav glass" aria-label="Fileloom mobile destinations"><button data-fl="page" data-page="files"><span data-icon="folder"></span>Files</button><button data-fl="page" data-page="library"><span data-icon="book"></span>Library</button><button data-fl="page" data-page="reader"><span data-icon="file"></span>Reader</button><button data-fl="page" data-page="settings"><span data-icon="sliders"></span>Settings</button></nav>
+ <div class="fl-playback glass tone-cornflower" id="fl-playback" hidden aria-label="Read aloud controls"><button class="icon-button" id="fl-play-grip" aria-label="Move playback controls; arrow keys adjust position"><span data-icon="grip"></span></button><span class="fl-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="fl-play-label"><strong>Reading aloud</strong><small id="fl-play-status">Coastal notes · 1.0×</small></span><button class="icon-button" data-fl="pause" id="fl-play-pause" aria-label="Pause reading"><span data-icon="pause"></span></button><button class="icon-button" data-fl="stop" aria-label="Stop reading"><span data-icon="close"></span></button></div>
+</div>
+      </section>
+      <section class="studio-view" id="view-foundations" hidden>
+        <div class="section-heading"><div><p class="eyebrow">03 / Foundations</p><h2>One material. A shared language.</h2></div><a class="glass button" id="export-tokens" href="tokens.json" download>Download tokens<span data-icon="download"></span></a></div>
+        <div class="foundation-grid"><article><p class="eyebrow">Material anatomy</p><div class="anatomy glass"><span data-icon="spark"></span></div><h3>Four layers, one surface.</h3><p>Pigmented body → fine grain → diffuse edge light → contact and cast shadow. The label lives above all four.</p></article><article><p class="eyebrow">Type & rhythm</p><div class="type-sample">Aa <span>Sea glass</span></div><h3>Clear, calm, familiar.</h3><p>System sans for controls. Editorial serif for this studio only. A 4 px spacing rhythm, 44 px minimum targets, 48 px standard controls.</p></article><article><p class="eyebrow">Touch & motion</p><div class="state-samples"><button class="glass button">Rest</button><button class="glass button forced-pressed">Press</button><button class="glass button" disabled>Disabled</button></div><h3>Weight without delay.</h3><p>Press settles in 160 ms. Selection glides in 260 ms; expanding surfaces settle in 340 ms. Motion follows your action and can be interrupted. Reduced motion removes animation.</p></article><article><p class="eyebrow">Native translation</p><div class="platform-tags"><span>Kotlin / Compose</span><span>Swift / SwiftUI</span></div><h3>Translate the intent.</h3><p>Share pigment, radii, elevation and state tokens. Preserve platform gestures, accessibility and native presentations. Grain can be drawn from a tiny shared tile.</p></article></div>
+        <div class="token-table"><h3>The core tokens</h3><table><thead><tr><th>Token</th><th>Value</th><th>Role</th></tr></thead><tbody><tr><td>radius.control</td><td>24 px</td><td>Buttons & input fields</td></tr><tr><td>radius.surface</td><td>28 px</td><td>Cards, menus & dialogs</td></tr><tr><td>target.minimum</td><td>44 px</td><td>Interactive hit area</td></tr><tr><td>motion.press</td><td>160 ms</td><td>Press & release feedback</td></tr><tr><td>motion.change</td><td>260 ms</td><td>Selection, feedback &amp; overlays</td></tr><tr><td>motion.expand</td><td>340 ms</td><td>Disclosure &amp; layout continuity</td></tr><tr><td>grain.opacity</td><td>0.32</td><td>Fine texture, behind content</td></tr><tr><td>elevation.amount</td><td>0.70</td><td>Default studio depth</td></tr></tbody></table></div>
+      </section>
+      <footer class="page-footer"><span>Sea glass</span><p>A material study for Fileloom. Built with HTML, CSS & a little JavaScript.</p><a href="README.md">Design & implementation notes<span data-icon="arrow"></span></a></footer>
+    </main>
+  </div>
+  <dialog id="demo-dialog" class="glass" aria-labelledby="dialog-title"><form id="collection-form"><p class="eyebrow">A new beginning</p><h2 id="dialog-title">Name your collection.</h2><p>A small place for things worth keeping.</p><label for="collection-name" id="dialog-name-label">Collection name</label><input class="dialog-input" id="collection-name" name="name" placeholder="Coastal notes" required maxlength="48"><div class="dialog-actions"><button type="button" class="quiet" id="dialog-cancel">Cancel</button><button class="glass button" type="submit"><span id="dialog-submit-label">Create collection</span><span data-icon="arrow"></span></button></div></form></dialog>
+  <dialog id="fl-sheet" class="fl-sheet" aria-labelledby="fl-sheet-title"><div id="fl-sheet-content"></div></dialog>
+  <div id="action-menu" class="glass popup" role="menu" hidden></div>
+  <div class="toast glass tone-seafoam" id="toast" hidden><span data-icon="check"></span><span id="toast-message" role="status"></span><button class="icon-button quiet" id="toast-close" aria-label="Dismiss notification"><span data-icon="close"></span></button></div>
+  <div class="sr-only" id="announcer" role="status"></div>
+</body>
+</html>
